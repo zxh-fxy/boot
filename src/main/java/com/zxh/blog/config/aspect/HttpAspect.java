@@ -1,4 +1,4 @@
-package com.zxh.blog.aspect;
+package com.zxh.blog.config.aspect;
 
 
 import cn.dev33.satoken.util.SaResult;
