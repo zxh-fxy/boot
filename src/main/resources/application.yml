@@ -1,4 +1,9 @@
 server:
+  tomcat:
+    accesslog:
+      directory: /log
+    threads:
+      min-spare: 100
   # 端口
   port: 8081
 
@@ -22,3 +27,4 @@ mybatis-plus:
   type-handlers-package: com.zxh.blog.typeHandler
   configuration:
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl

@@ -7,27 +7,6 @@
         </encoder>
     </appender>
 
-    <!-- 按照每天生成日志文件 -->
-    <appender name="FILE"
-              class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%t] %-5p %m%n</pattern>
-        </encoder>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>DEBUG</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/team-mix.%d{yyyy-MM-dd}-%i.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
-            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <MaxFileSize>5MB</MaxFileSize>
-            </TimeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
-    </appender>
-
     <appender name="callback_file"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>

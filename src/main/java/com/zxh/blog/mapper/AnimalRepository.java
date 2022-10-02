@@ -1,4 +1,4 @@
-package com.zxh.blog.Repository;
+package com.zxh.blog.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zxh.blog.entity.Animal;

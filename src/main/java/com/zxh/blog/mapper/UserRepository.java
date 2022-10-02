@@ -1,7 +1,6 @@
-package com.zxh.blog.Repository;
+package com.zxh.blog.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zxh.blog.entity.Animal;
 import com.zxh.blog.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 

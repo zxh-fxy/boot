@@ -7,15 +7,14 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zxh.blog.Repository.AnimalRepository;
 import com.zxh.blog.entity.Animal;
 import com.zxh.blog.enums.WrapperType;
+import com.zxh.blog.mapper.AnimalRepository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,8 +24,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AnimalService {
 
-  @Autowired
-  private AnimalRepository animalRepository;
+
+  private final AnimalRepository animalRepository;
+
+
+  public AnimalService(AnimalRepository animalRepository){
+    this.animalRepository=animalRepository;
+  }
 
   //增
   public ResponseEntity<Animal> addAnimal(final Animal animal) {
